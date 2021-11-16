@@ -1,0 +1,119 @@
+#include<iostream>
+#include<iomanip>
+#include<math.h>
+# define pi 3.14159
+using namespace std;
+
+
+int main()
+{
+start:
+
+	char repeat;
+	int choice;
+
+
+	do {
+		cout << "---------------------\n";
+		cout << "CALCULATORn";
+		cout << "---------------------\n";
+		cout << "1. Cube\n";
+		cout << "2. Rectangular Prism\n";
+		cout << "3. Sphere\n";
+		cout << "4. Compute your grade\n";
+		cout << "5. QUIT\n.";
+		cout << "Enter your choice: ";
+		cin >> choice;
+		cout << endl;
+
+		switch (choice)
+		{
+		case 1:
+		{
+			float e, result;
+			cout << "You have chosen Cube." << endl;
+			cout << "\n\n";
+			cout << "Enter value of edge:";
+			cin >> e;
+			result = e * e * e;
+			cout << fixed << setprecision(2);
+			cout << "The Volume of the Cube is: " << result;
+			cout << endl;
+
+			break;
+		}
+
+		cout << endl;
+
+		case 2:
+		{
+			double l, w, h, result;
+			cout << "You have chosen Rectangular Prism." << endl;
+			cout << "\n\n";
+			cout << "Enter length: ";
+			cin >> l;
+			cout << "Enter width: ";
+			cin >> w;
+			cout << "Enter height: ";
+			cin >> h;
+			result = l * w * h;
+			cout << fixed << setprecision(2);
+			cout << "The Volume of the Rectangular Prism is " << result;
+			cout << "\n\n";
+			break;
+		}
+
+		case 3:
+		{
+			double r, result;
+
+			cout << "You have chosen Sphere." << endl;
+			cout << "\n\n";
+			cout << "Enter the radius: ";
+			cin >> r;
+			result = 4.0 / 3.0 * pi * r * r * r;
+			cout << fixed << setprecision(2);
+			cout << "The volume of the Sphere is: " << result;
+			cout << endl;
+		}
+
+		case 4:
+		{
+			double ex1, ex2, ex3, ex4, ex5, ex6, result;
+			cout << "Enter Exam 1 score: ";
+			cin >> ex1;
+			cout << "Enter Exam 2 score: ";
+			cin >> ex2;
+			cout << "Enter Exam 3 score: ";
+			cin >> ex3;
+			cout << "Enter Exam 4 score: ";
+			cin >> ex4;
+			cout << "Enter Exam 5 score: ";
+			cin >> ex5;
+			cout << "Enter Exam 6 score: ";
+			cin >> ex6;
+			result = (ex1 + ex2 + ex3 + ex4 + ex5 + ex6) / 6.0;
+			cout << fixed << setprecision(2) << "Average: " << result;
+			if (result >= 70)
+			{
+				cout << ":)";
+			}
+			else
+			{
+				cout << ":(";
+			}
+
+		}
+		}
+		cout << "\n\n";
+
+		cout << "Do you still want to continue enter Y / N ?";
+		cin >> repeat;
+		if (repeat == 'y')
+			goto start;
+
+
+	} while (choice != 5);
+
+	return 0;
+}
